@@ -8,7 +8,7 @@ from io import BytesIO
 # Load the saved model
 model = load_model('best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
 
-st.title("Muhun manga - LAI25-SM013")
+st.title("PanduDaun - LAI25-SM013")
 
 option = st.radio("Pilih metode input gambar:", ("Upload File", "Kamera", "Link Gambar"), horizontal=True)
 
