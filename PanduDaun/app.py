@@ -6,7 +6,7 @@ import requests
 from io import BytesIO
 
 # model loading
-model = load_model('PanduDaun/best_model_revised_98.h5')
+model = load_model('/PanduDaun/best_model_revised_98.h5')
 
 st.title("PanduDaun - LAI25-SM013")
 
@@ -59,24 +59,94 @@ if image is not None:
     #    st.write({k: f"{v}%" for k, v in prob_dict.items()})
     
     disease_descriptions = {
-        'Anthracnose': 'Anthracnose adalah penyakit jamur yang menyebabkan bercak gelap pada daun dan buah.',
-        'Bacterial Canker': 'Bacterial Canker adalah penyakit bakteri yang menyebabkan luka dan bercak pada batang atau daun.',
-        'Cutting Weevil': 'Cutting Weevil adalah serangan kumbang yang memotong bagian tanaman.',
-        'Die Back': 'Die Back adalah kondisi di mana bagian ujung tanaman mengering dan mati.',
-        'Gall Midge': 'Gall Midge adalah serangan lalat kecil yang menyebabkan pembengkakan pada jaringan tanaman.',
-        'Healthy': 'Tanaman dalam kondisi sehat.',
-        'Powdery Mildew': 'Powdery Mildew adalah penyakit jamur yang menyebabkan lapisan putih seperti tepung pada permukaan daun.',
-        'Sooty Mildew': 'Sooty Mildew adalah jamur yang tumbuh di permukaan daun, biasanya berwarna hitam.'
+        'Anthracnose': (
+            "Anthracnose adalah penyakit yang disebabkan oleh jamur Colletotrichum spp. "
+            "Gejalanya berupa bercak coklat kehitaman pada daun, batang, atau buah, "
+            "yang lama-kelamaan membesar dan menyebabkan jaringan tanaman membusuk. "
+            "Penyakit ini berkembang pesat pada kondisi lembab dan sering menyerang saat musim hujan."
+        ),
+        'Bacterial Canker': (
+            "Bacterial Canker disebabkan oleh bakteri patogen seperti Xanthomonas atau Pseudomonas. "
+            "Gejalanya berupa luka (kanser) pada batang, cabang, atau daun, seringkali disertai eksudat lengket. "
+            "Daun bisa menguning, layu, dan rontok. Penyakit ini menyebar melalui percikan air dan alat pertanian yang terkontaminasi."
+        ),
+        'Cutting Weevil': (
+            "Cutting Weevil adalah hama berupa kumbang kecil yang memotong atau melubangi bagian tanaman, "
+            "terutama batang muda dan daun. Serangan berat dapat menyebabkan tanaman tumbuh tidak normal, "
+            "daun berlubang, dan bahkan kematian tunas muda."
+        ),
+        'Die Back': (
+            "Die Back adalah kondisi di mana ujung cabang atau ranting tanaman mengering dan mati. "
+            "Penyebabnya bisa berupa infeksi jamur, bakteri, kekurangan nutrisi, atau kerusakan fisik. "
+            "Gejala awal berupa perubahan warna pada ujung daun/cabang, lalu jaringan mengering dan mati ke arah pangkal."
+        ),
+        'Gall Midge': (
+            "Gall Midge adalah serangan lalat kecil (Ordo Cecidomyiidae) yang menyebabkan terbentuknya gall (bengkak) "
+            "pada jaringan tanaman. Larva berkembang di dalam gall dan mengganggu pertumbuhan normal tanaman. "
+            "Serangan berat dapat menyebabkan deformasi daun dan penurunan hasil."
+        ),
+        'Healthy': (
+            "Tanaman dalam kondisi sehat, tidak menunjukkan gejala penyakit atau serangan hama. "
+            "Daun berwarna hijau segar, pertumbuhan normal, dan tidak ada bercak, luka, atau deformasi."
+        ),
+        'Powdery Mildew': (
+            "Powdery Mildew adalah penyakit jamur yang ditandai dengan munculnya lapisan putih seperti tepung "
+            "pada permukaan daun, batang, atau bunga. Penyakit ini disebabkan oleh jamur dari famili Erysiphaceae. "
+            "Infeksi berat dapat menghambat fotosintesis dan pertumbuhan tanaman."
+        ),
+        'Sooty Mildew': (
+            "Sooty Mildew adalah jamur permukaan yang tumbuh di atas embun madu yang dihasilkan oleh serangga seperti kutu daun. "
+            "Daun tampak berwarna hitam seperti berjelaga, menghambat proses fotosintesis, dan menurunkan kualitas hasil panen."
+        )
     }
     disease_solutions = {
-        'Anthracnose': 'Buang bagian tanaman yang terinfeksi dan gunakan fungisida sesuai anjuran.',
-        'Bacterial Canker': 'Pangkas bagian yang sakit dan gunakan bakterisida. Jaga kebersihan alat pertanian.',
-        'Cutting Weevil': 'Kumpulkan dan musnahkan kumbang, gunakan insektisida jika perlu.',
-        'Die Back': 'Pangkas bagian yang mati dan perbaiki drainase serta pemupukan.',
-        'Gall Midge': 'Buang dan musnahkan jaringan yang bengkak, gunakan insektisida nabati.',
-        'Healthy': 'Tidak perlu tindakan, pertahankan perawatan tanaman yang baik.',
-        'Powdery Mildew': 'Gunakan fungisida dan tingkatkan sirkulasi udara di sekitar tanaman.',
-        'Sooty Mildew': 'Bersihkan permukaan daun dan kendalikan serangga penghasil embun madu.'
+        'Anthracnose': (
+            "1. Buang dan musnahkan bagian tanaman yang terinfeksi untuk mencegah penyebaran.\n"
+            "2. Semprotkan fungisida berbahan aktif seperti mankozeb atau klorotalonil sesuai dosis anjuran.\n"
+            "3. Jaga kebersihan kebun dan hindari kelembaban berlebih.\n"
+            "4. Lakukan rotasi tanaman dan pilih varietas tahan penyakit jika tersedia."
+        ),
+        'Bacterial Canker': (
+            "1. Pangkas dan musnahkan bagian tanaman yang menunjukkan gejala kanser.\n"
+            "2. Sterilkan alat pertanian sebelum dan sesudah digunakan.\n"
+            "3. Semprotkan bakterisida berbahan aktif tembaga secara berkala.\n"
+            "4. Hindari penyiraman berlebihan dan perbaiki drainase lahan."
+        ),
+        'Cutting Weevil': (
+            "1. Kumpulkan dan musnahkan kumbang dewasa secara manual jika populasinya rendah.\n"
+            "2. Gunakan insektisida berbahan aktif sesuai rekomendasi jika serangan berat.\n"
+            "3. Lakukan sanitasi kebun dan buang sisa tanaman yang menjadi tempat berkembang biak hama.\n"
+            "4. Tanam tanaman penutup tanah untuk mengurangi populasi hama."
+        ),
+        'Die Back': (
+            "1. Pangkas bagian tanaman yang mati hingga ke jaringan sehat.\n"
+            "2. Oleskan fungisida pada luka bekas potongan untuk mencegah infeksi lanjutan.\n"
+            "3. Perbaiki drainase dan hindari genangan air di sekitar tanaman.\n"
+            "4. Berikan pupuk seimbang untuk meningkatkan ketahanan tanaman."
+        ),
+        'Gall Midge': (
+            "1. Buang dan musnahkan daun atau jaringan yang membengkak (gall).\n"
+            "2. Semprotkan insektisida nabati atau berbahan aktif sesuai anjuran jika serangan berat.\n"
+            "3. Lakukan monitoring rutin dan pasang perangkap serangga.\n"
+            "4. Jaga kebersihan kebun dan hindari penumpukan sisa tanaman."
+        ),
+        'Healthy': (
+            "1. Lanjutkan perawatan rutin seperti penyiraman, pemupukan, dan pengendalian hama/penyakit secara preventif.\n"
+            "2. Pantau kondisi tanaman secara berkala untuk deteksi dini masalah.\n"
+            "3. Jaga kebersihan lingkungan sekitar tanaman."
+        ),
+        'Powdery Mildew': (
+            "1. Pangkas dan musnahkan daun yang terinfeksi berat.\n"
+            "2. Semprotkan fungisida berbahan aktif sulfur atau miklobutanil sesuai dosis anjuran.\n"
+            "3. Tingkatkan sirkulasi udara di sekitar tanaman dengan jarak tanam yang cukup.\n"
+            "4. Hindari penyiraman pada malam hari."
+        ),
+        'Sooty Mildew': (
+            "1. Bersihkan permukaan daun dengan air bersih atau kain lembab.\n"
+            "2. Kendalikan serangga penghasil embun madu seperti kutu daun dengan insektisida nabati.\n"
+            "3. Jaga kebersihan tanaman dan lingkungan sekitar.\n"
+            "4. Lakukan pemangkasan cabang yang terlalu rimbun untuk meningkatkan sirkulasi udara."
+        )
     }
     st.write(f"**Predicted class:** {class_names[predicted_class]}")
     with st.expander(f"Apa itu {class_names[predicted_class]}?"):
