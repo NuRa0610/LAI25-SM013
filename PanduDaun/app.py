@@ -52,10 +52,10 @@ if image is not None:
     with col1:
         st.image(image, caption="Gambar yang dipilih", use_container_width=False)
         
-    with col2:
-        st.write("**Probabilities:**")
-        prob_dict = {name: round(float(pred) * 100, 2) for name, pred in zip(class_names, predictions[0])}
-        st.write({k: f"{v}%" for k, v in prob_dict.items()})
+    #with col2:
+    #    st.write("**Probabilities:**")
+    #    prob_dict = {name: round(float(pred) * 100, 2) for name, pred in zip(class_names, predictions[0])}
+    #    st.write({k: f"{v}%" for k, v in prob_dict.items()})
     #grafik bar kalo perlu
     #st.bar_chart([round(float(p) * 100, 2) for p in predictions[0]])
 
