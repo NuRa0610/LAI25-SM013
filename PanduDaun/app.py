@@ -6,7 +6,7 @@ import requests
 from io import BytesIO
 
 # Load the saved model
-model = load_model('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
+model = load_model('PanduDaun/best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
 
 st.title("PanduDaun - LAI25-SM013")
 
