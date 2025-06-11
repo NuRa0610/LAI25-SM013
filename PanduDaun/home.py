@@ -36,10 +36,10 @@ st.markdown("""
     }
     .stApp {
         background-image:
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/bg.png');
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png');
         background-position:
             10% 20%,
             90% 10%,
