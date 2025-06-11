@@ -1,33 +1,5 @@
 import streamlit as st
 
-st.markdown("""
-    <style>
-    .stApp {
-        background-image:
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png');
-        background-position:
-            10% 20%,
-            90% 10%,
-            20% 80%,
-            80% 60%;
-        background-size: 220px 220px, 150px 150px, 180px 180px, 150px 150px;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.7;
-    }
-            </style>
-""", unsafe_allow_html=True)
-
 st.header("Panduan Penggunaan Aplikasi Deteksi Penyakit Daun Mangga")
 
 cols = st.columns(3)

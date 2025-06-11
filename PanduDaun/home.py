@@ -5,66 +5,6 @@ from cards import (
     prediction_card,
 )
 
-st.markdown("""
-    <style>
-    .big-title {
-        font-size:2.2rem;
-        color:#388e3c;
-        font-weight:700;
-    }
-    .card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.7;
-    }
-    .green-btn {
-        background: #4caf50;
-        color: white;
-        border-radius: 6px;
-        padding: 0.5rem 1.5rem;
-        border: none;
-        font-weight: 600;
-        font-size: 1rem;
-        margin-top: 1rem;
-        cursor:pointer;
-    }
-    .stApp {
-        background-image:
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
-            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png');
-        background-position:
-            10% 20%,
-            90% 10%,
-            20% 80%,
-            80% 60%;
-        background-size: 220px 220px, 150px 150px, 180px 180px, 150px 150px;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .carousel-card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
-        padding: 1.5rem 1rem 1rem 1rem;
-        margin-bottom: 2rem;
-        margin-top: 1.5rem;
-        opacity: 0.95;
-    }
-    .carousel-info {
-        text-align: center;
-        font-weight: 600;
-        color: #388e3c;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
 st.markdown('''
 <div class="card">
     <span class="big-title">Deteksi Penyakit Daun Mangga</span><br>

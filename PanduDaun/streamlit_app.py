@@ -5,9 +5,12 @@ from cards import (
     chat_card,
 )
 
+# Tambahkan CSS custom di bawah ini
 st.markdown("""
     <style>
-    .stApp {
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+    .stApp {     
+        background-color: #D0F0C0 !important;
         background-image:
             url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
             url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
@@ -21,8 +24,82 @@ st.markdown("""
         background-size: 220px 220px, 150px 150px, 180px 180px, 150px 150px;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        color: #3d3a2a !important;
+        font-family: 'Space Grotesk', sans-serif !important;
     }
-            </style>
+    header[data-testid="stHeader"] {
+        background-color: #D0F0C0 !important;
+        box-shadow: none !important;
+    }
+    section[data-testid="stSidebar"] {
+        background-color: #B8E6A0 !important;
+        color: #3d3a2a !important;
+    }
+    .st-cq, .st-cp, .st-cq * {
+        border-color: #388e3c !important;
+        border-radius: 0.6rem !important;
+    }
+    .stButton>button, button[kind="secondary"] {
+        background: #388e3c !important;
+        color: #fff !important;
+        border-radius: 0.6rem !important;
+        font-family: 'Space Grotesk', sans-serif !important;
+    }
+    .stButton>button:hover, button[kind="secondary"]:hover {
+        background: #2e7031 !important;
+        color: #fff !important;
+    }
+    a {
+        color: #3d3a2a !important;
+    }
+    code, pre {
+        background: powderBlue !important;
+        font-family: 'Space Mono', monospace !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif !important;
+    }
+    .carousel-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+        padding: 1.5rem 1rem 1rem 1rem;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        opacity: 0.95;
+    }
+    .carousel-info {
+        text-align: center;
+        font-weight: 600;
+        color: #388e3c;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    .big-title {
+        font-size:2.2rem;
+        color:#388e3c;
+        font-weight:700;
+    }
+    .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.7;
+    }
+    .green-btn {
+        background: #4caf50;
+        color: white;
+        border-radius: 6px;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-top: 1rem;
+        cursor:pointer;
+    }
+    </style>
 """, unsafe_allow_html=True)
 
 if "init" not in st.session_state:
