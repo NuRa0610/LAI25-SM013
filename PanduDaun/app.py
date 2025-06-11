@@ -6,7 +6,7 @@ import requests
 from io import BytesIO
 
 # model loading
-model = load_model('/PanduDaun/best_model_revised_98.h5')
+model = load_model('best_model_revised_98.h5')
 
 st.title("PanduDaun - LAI25-SM013")
 
