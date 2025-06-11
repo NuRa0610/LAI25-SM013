@@ -4,7 +4,7 @@ st.header("Panduan Penggunaan Aplikasi Deteksi Penyakit Daun Mangga")
 
 cols = st.columns(3)
 
-st.container(border=True).video("https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4", autoplay=True)
+st.container(border=True).video("https://youtu.be/eAVGPxPghpU", autoplay=True)
 
 st.markdown('<div class="card"><b>Panduan Penggunaan Aplikasi</b></div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
