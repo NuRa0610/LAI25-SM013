@@ -69,7 +69,7 @@ with col1:
                 '✅ Saran penanganan berbasis data<br>'
                 '✅ Ramah pengguna<br></div>', unsafe_allow_html=True)
 with col2:
-    st.image("Capstone_logo.png")
+    st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/Capstone_logo.png")
 
 st.markdown('<div class="card"><b>Panduan Penggunaan Aplikasi</b></div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
