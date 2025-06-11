@@ -7,7 +7,7 @@ def prediction_card():
 
 def media_card():
     st.page_link("media.py", label="Media", icon=":material/image:")
-    st.video("https://s3-us-west-2.amazonaws.com/assets.streamlit.io/videos/hero-video.mp4", autoplay=True)
+    st.video("https://youtu.be/eAVGPxPghpU", autoplay=True)
 
 def chat_card():
     st.page_link("chat.py", label="Chat", icon=":material/chat:")
