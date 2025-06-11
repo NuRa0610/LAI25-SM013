@@ -153,7 +153,7 @@ with st.sidebar.container(height=310):
         chat_card()
     elif page.title == "Media":
         st.page_link("media.py", label="Media", icon=":material/image:")
-        st.video("https://youtu.be/eAVGPxPghpU", autoplay=True)
+        st.video("https://youtu.be/4pE4ToY0CR8", autoplay=True)
     elif page.title == "Prediksi":
         st.page_link("app.py", label="Panduan", icon=":material/insert_chart:")
         st.write("Silahkan upload gambar berdasarkan pilihan yang ada.")

@@ -7,7 +7,7 @@ def prediction_card():
 
 def media_card():
     st.page_link("media.py", label="Media", icon=":material/image:")
-    st.video("https://youtu.be/eAVGPxPghpU", autoplay=True)
+    st.video("https://youtu.be/4pE4ToY0CR8", autoplay=True)
 
 def chat_card():
     st.page_link("chat.py", label="Chat", icon=":material/chat:")
@@ -17,36 +17,44 @@ def chat_card():
 
 def team_card():
     st.markdown("### 👥 Tentang Kami")
-    team = [
+team = [
         {
-            "name": "Nida Annisa Sholeha",
-            "role": "Frontend Developer",
-            "photo": "https://ui-avatars.com/api/?name=Nida+Annisa+Sholeha&background=388e3c&color=fff"
-        },
-        {
-            "name": "Numan ",
-            "role": "Machine Learning Engineer",
-            "photo": "https://ui-avatars.com/api/?name=Numan+Rahman&background=388e3c&color=fff"
-        },
-        {
-            "name": "Budi Santoso",
-            "role": "Backend Developer",
-            "photo": "https://ui-avatars.com/api/?name=Budi+Santoso&background=388e3c&color=fff"
-        },
-        {
-            "name": "Siti Aminah",
-            "role": "UI/UX Designer",
-            "photo": "https://ui-avatars.com/api/?name=Siti+Aminah&background=388e3c&color=fff"
-        },
-        {
-            "name": "Rizky Pratama",
-            "role": "Data Scientist",
-            "photo": "https://ui-avatars.com/api/?name=Rizky+Pratama&background=388e3c&color=fff"
-        },
+        "name": "Nida Annisa Sholeha",
+        "role": "Project Manager",
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_1.png"
+    },
+    {
+        "name": "Dewi Yuliana",
+        "role": "Backend Developer",
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_2.png"
+    },
+    {
+        "name": "Indira Aline",
+        "role": "UI/UX Designer",
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_3.png"
+    },
+    {
+        "name": "Numan Zainul Rahman",
+        "role": "Machine Learning Engineer",
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_4.png"
+    },
+    {
+        "name": "Kenneth Angelo",
+        "role": "Advisor",
+        "photo": "https://assets.cdn.dicoding.com/small/avatar/dos-6075361ed7e6035c937dc59e25896ad020241108122210.png"
+    },
     ]
-    cols = st.columns(len(team))
-    for idx, member in enumerate(team):
-        with cols[idx]:
-            st.image(member["photo"], width=90)
-            st.markdown(f"**{member['name']}**")
-            st.caption(member["role"])
+    
+cols = st.columns(len(team))
+for idx, member in enumerate(team):
+    with cols[idx]:
+        st.markdown(
+            f"""
+            <div style='text-align:center'>
+                <img src="{member['photo']}" width="90" style="border-radius:50%; margin-bottom:8px;" />
+                <div><strong>{member['name']}</strong></div>
+                <div>{member['role']}</div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
