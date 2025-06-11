@@ -6,22 +6,22 @@ team = [
     {
         "name": "Nida Annisa Sholeha",
         "role": "Project Manager",
-        "photo": "https://ui-avatars.com/api/?name=Nida+Annisa+Sholeha&background=388e3c&color=fff"
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_1.png"
     },
     {
         "name": "Dewi Yuliana",
         "role": "Backend Developer",
-        "photo": "https://ui-avatars.com/api/?name=Dewi+Yuliana&background=388e3c&color=fff"
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_2.png"
     },
     {
         "name": "Indira Aline",
         "role": "UI/UX Designer",
-        "photo": "https://ui-avatars.com/api/?name=Indira+Aline&background=388e3c&color=fff"
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_3.png"
     },
     {
         "name": "Numan Zainul Rahman",
         "role": "Machine Learning Engineer",
-        "photo": "https://ui-avatars.com/api/?name=Numan+Zainul+Rahman&background=388e3c&color=fff"
+        "photo": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/team_4.png"
     },
     {
         "name": "Kenneth Angelo",
