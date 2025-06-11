@@ -34,9 +34,9 @@ style = "normal"
 weight = 400
 
 [theme]
-base="light"
+base = "light"
 backgroundColor = "#D0F0C0"
-secondaryBackgroundColor="lavender"
+secondaryBackgroundColor = "lavender"
 textColor = "#3d3a2a"
 linkColor = "#3d3a2a"
 borderColor = "#d3d2ca"
@@ -45,9 +45,9 @@ baseRadius = "0.6rem"
 font = "SpaceGrotesk"
 headingFont = "SpaceGroteskHeader"
 codeFont = "SpaceMono"
-codeBackgroundColor="powderBlue"
+codeBackgroundColor = "powderBlue"
 showSidebarBorder = true
 
 [theme.sidebar]
-backgroundColor="#B8E6A0"
-secondaryBackgroundColor="lavender"
+backgroundColor = "#B8E6A0"
+secondaryBackgroundColor = "lavender"
