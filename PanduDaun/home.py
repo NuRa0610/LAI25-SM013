@@ -8,7 +8,7 @@ from cards import (
 st.markdown("""
     <style>
     body {
-        background-color: #f7faf5;
+        #background-color: #f7faf5;
     }
     .big-title {
         font-size:2.2rem;
@@ -91,7 +91,7 @@ with cols[0].container(height=310):
 with cols[1].container(height=310):
     media_card()
 
-st.markdown('<div class="card"><b>Daftar Penyakit Tomat</b></div>', unsafe_allow_html=True)
+st.markdown('<div class="card"><b>Daftar Penyakit Daun Mangga</b></div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col1:
     st.image("https://images.unsplash.com/photo-1465101046530-73398c7f28ca", use_container_width=True)
