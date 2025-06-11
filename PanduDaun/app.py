@@ -5,11 +5,12 @@ from PIL import Image
 import requests
 from io import BytesIO
 
-# Load the saved model
-model = load_model('PanduDaun/best_model_revised_98.h5') # Replace 'best_model.keras' with the actual filename
+# model loading
+model = load_model('best_model_revised_98.h5') 
 
 st.title("PanduDaun - LAI25-SM013")
 
+# image load and process
 option = st.radio("Pilih metode input gambar:", ("Upload File", "Kamera", "Link Gambar"), horizontal=True)
 
 image = None
@@ -32,7 +33,6 @@ elif option == "Link Gambar":
             st.error("Gagal mengambil gambar dari URL.")
 
 if image is not None:
-    # Resize gambar agar tinggi maksimal 250px, lebar menyesuaikan proporsi
     max_height = 250
     w, h = image.size
     if h > max_height:
@@ -52,14 +52,12 @@ if image is not None:
     with col1:
         st.image(image, caption="Gambar yang dipilih", use_container_width=False)
         
+    # persentase 
     #with col2:
     #    st.write("**Probabilities:**")
     #    prob_dict = {name: round(float(pred) * 100, 2) for name, pred in zip(class_names, predictions[0])}
     #    st.write({k: f"{v}%" for k, v in prob_dict.items()})
-    #grafik bar kalo perlu
-    #st.bar_chart([round(float(p) * 100, 2) for p in predictions[0]])
-
-    #col1, col2 = st.columns(2)
+    
     disease_descriptions = {
         'Anthracnose': 'Anthracnose adalah penyakit jamur yang menyebabkan bercak gelap pada daun dan buah.',
         'Bacterial Canker': 'Bacterial Canker adalah penyakit bakteri yang menyebabkan luka dan bercak pada batang atau daun.',

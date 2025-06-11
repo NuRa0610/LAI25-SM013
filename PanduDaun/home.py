@@ -7,9 +7,6 @@ from cards import (
 
 st.markdown("""
     <style>
-    body {
-        background-color: #f7faf5;
-    }
     .big-title {
         font-size:2.2rem;
         color:#388e3c;
@@ -34,7 +31,37 @@ st.markdown("""
         margin-top: 1rem;
         cursor:pointer;
     }
-    
+    .stApp {
+        background-image:
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png');
+        background-position:
+            10% 20%,
+            90% 10%,
+            20% 80%,
+            80% 60%;
+        background-size: 220px 220px, 150px 150px, 180px 180px, 150px 150px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .carousel-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+        padding: 1.5rem 1rem 1rem 1rem;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        opacity: 0.95;
+    }
+    .carousel-info {
+        text-align: center;
+        font-weight: 600;
+        color: #388e3c;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -46,7 +73,6 @@ st.markdown('''
     <a href="/app"><button class="green-btn">Mulai Deteksi</button></a>
 </div>
 ''', unsafe_allow_html=True)
-#st.page_link("app.py", label="Mulai Deteksi", icon="🔎")
 
 col1, col2 = st.columns([2,1])
 with col1:
@@ -61,13 +87,13 @@ with col2:
 st.markdown('<div class="card"><b>Panduan Penggunaan Aplikasi</b></div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image("https://images.unsplash.com/photo-1502741338009-cac2772e18bc", use_container_width=True)
+    st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/img_3.png", use_container_width=True)
     st.markdown("**1. Ambil atau Unggah Foto**<br>Gunakan kamera atau unggah gambar daun tomat.", unsafe_allow_html=True)
 with col2:
-    st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b", use_container_width=True)
+    st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/img_1.png", use_container_width=True)
     st.markdown("**2. Analisis Otomatis**<br>AI akan menganalisis gambar secara otomatis.", unsafe_allow_html=True)
 with col3:
-    st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb", use_container_width=True)
+    st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/img_2.png", use_container_width=True)
     st.markdown("**3. Lihat Hasil dan Saran**<br>Hasil deteksi dan saran penanganan akan muncul.", unsafe_allow_html=True)
 
 st.markdown('<div class="card"><b>Bantuan lebih lanjut</b></div>', unsafe_allow_html=True)
@@ -80,15 +106,58 @@ with cols[1].container(height=310):
 
 st.markdown('<div class="card"><b>Daftar Penyakit Daun Mangga</b></div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
-with col1:
-    st.image("https://images.unsplash.com/photo-1465101046530-73398c7f28ca", use_container_width=True)
-    st.markdown("**Anthracnose**<br>Adalah penyakit yang disebabkan oleh jamur dan ditandai dengan bercak-bercak gelap pada daun.", unsafe_allow_html=True)
-with col2:
-    st.image("https://images.unsplash.com/photo-1464983953574-0892a716854b", use_container_width=True)
-    st.markdown("**Bacterial Spot**<br>Bercak hitam pada daun dan buah.", unsafe_allow_html=True)
-with col3:
-    st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb", use_container_width=True)
-    st.markdown("**Early Blight**<br>Bercak konsentris pada daun.", unsafe_allow_html=True)
+
+images = [
+    {
+        "url": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/anth.jpg",
+        "caption": "Anthracnose (Penyakit Jamur)"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bacterial.jpg",
+        "caption": "Bacterial Blight (Penyakit Bakteri)"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/gall.jpg",
+        "caption": "Galls (Penyakit Gall)"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/powder.jpg",
+        "caption": "Powdery Mildew (Penyakit Embun Tepung)"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/sooty.jpg",
+        "caption": "Sooty Mold (Penyakit Jamur Hitam)"
+    },
+]
+if "idx" not in st.session_state:
+    st.session_state.idx = 0
+
+col_prev, col_info, col_next = st.columns([1, 2, 1])
+with col_prev:
+    if st.button("⬅️ Sebelumnya"):
+        if st.session_state.idx == 0:
+            st.session_state.idx = len(images) - 3
+        else:
+            st.session_state.idx -= 1
+with col_next:
+    if st.button("Berikutnya ➡️"):
+        if st.session_state.idx == len(images) - 3:
+            st.session_state.idx = 0
+        else:
+            st.session_state.idx += 1
+with col_info:
+    st.markdown(
+        f'<div class="carousel-info">Gambar {st.session_state.idx+1} - {st.session_state.idx+3} dari {len(images)}</div>',
+        unsafe_allow_html=True
+    )
+
+cols = st.columns(3)
+for i, col in enumerate(cols):
+    col.image(images[st.session_state.idx + i]["url"], use_container_width=True)
+    col.caption(
+        f'<span style="font-size:1rem;font-weight:500;">{images[st.session_state.idx + i]["caption"]}</span>',
+        unsafe_allow_html=True
+    )
 
 # Footer
 st.markdown("""

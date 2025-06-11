@@ -5,6 +5,25 @@ from cards import (
     chat_card,
 )
 
+st.markdown("""
+    <style>
+    .stApp {
+        background-image:
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png'),
+            url('https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/bg.png');
+        background-position:
+            10% 20%,
+            90% 10%,
+            20% 80%,
+            80% 60%;
+        background-size: 220px 220px, 150px 150px, 180px 180px, 150px 150px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+            </style>
+""", unsafe_allow_html=True)
 
 if "init" not in st.session_state:
     st.session_state.chart_data = pd.DataFrame(
