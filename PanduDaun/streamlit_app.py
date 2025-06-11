@@ -40,13 +40,13 @@ st.markdown("""
         border-radius: 0.6rem !important;
     }
     .stButton>button, button[kind="secondary"] {
-        background: #388e3c !important;
+        background: #4caf50 !important;
         color: #fff !important;
         border-radius: 0.6rem !important;
         font-family: 'Space Grotesk', sans-serif !important;
     }
     .stButton>button:hover, button[kind="secondary"]:hover {
-        background: #2e7031 !important;
+        background: #388e3c !important;
         color: #fff !important;
     }
     a {
@@ -137,6 +137,12 @@ pages = [
         title="Prediksi",
         icon=":material/insert_chart:"
     ),
+
+    st.Page(
+        "team.py",
+        title="Tentang Kami",
+        icon=":material/people:"
+    )
 ]
 
 page = st.navigation(pages)
@@ -152,12 +158,18 @@ with st.sidebar.container(height=310):
         st.page_link("app.py", label="Panduan", icon=":material/insert_chart:")
         st.write("Silahkan upload gambar berdasarkan pilihan yang ada.")
         st.write("Gambar yang masuk akan otomatis terprediksi.")
+    elif page.title == "Tentang Kami":
+        st.page_link("team.py", label="Tentang Kami", icon=":material/people:")
+        st.markdown(
+            "Projek ini dikembangkan oleh tim **LAI25-SM013**. Dalam kegiatan Laskar AI. <br>"
+            "Untuk informasi lebih lanjut, kunjungi [GitHub](https://github.com/NuRa0610/LAI25-SM013)."
+            , unsafe_allow_html=True
+        )
     else:
         st.page_link("home.py", label="Home", icon=":material/home:")
         st.write("Selamat datang di Aplikasi Deteksi Penyakit Daun Mangga!")
         st.write(
-            "Pilih halaman dari atas. Thumbnail sidebar ini menunjukkan subset "
-            "elemen dari setiap halaman sehingga Anda dapat melihat tema sidebar."
+            "Pilih halaman yang dituju dari navigasi diatas, untuk berpindah ke halaman tersebut."
         )
 
 st.sidebar.caption(
