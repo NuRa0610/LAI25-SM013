@@ -7,7 +7,7 @@ def prediction_card():
 
 def media_card():
     st.page_link("media.py", label="Media", icon=":material/image:")
-    st.video("https://youtu.be/4pE4ToY0CR8", autoplay=True)
+    st.video("https://youtu.be/PAkCbfRzj-M", autoplay=True)
 
 def chat_card():
     st.page_link("chat.py", label="Chat", icon=":material/chat:")
