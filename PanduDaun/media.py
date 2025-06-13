@@ -10,7 +10,7 @@ st.markdown('<div class="card"><b>Panduan Penggunaan Aplikasi</b></div>', unsafe
 col1, col2, col3 = st.columns(3)
 with col1:
     st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/img_3.png", use_container_width=True)
-    st.markdown("**1. Ambil atau Unggah Foto**<br>Gunakan kamera atau unggah gambar daun tomat.", unsafe_allow_html=True)
+    st.markdown("**1. Ambil atau Unggah Foto**<br>Gunakan kamera atau unggah gambar daun mangga.", unsafe_allow_html=True)
 with col2:
     st.image("https://raw.githubusercontent.com/NuRa0610/LAI25-SM013/main/PanduDaun/img_1.png", use_container_width=True)
     st.markdown("**2. Analisis Otomatis**<br>AI akan menganalisis gambar secara otomatis.", unsafe_allow_html=True)
